@@ -30,6 +30,19 @@ docker compose run --rm web odoo -d odoo_app -u knr_order --stop-after-init
 
 Setelah itu masuk kembali ke Odoo. Grup **Kepala Administrasi** otomatis diberikan ke user admin saat modul diinstal; user lain ditetapkan melalui menu **Pengguna dan Hak Akses** → Users → tab Access Rights → kategori Kedai Nyonya Rumah.
 
+## Pembuatan akun
+
+Akun dibuat satu per satu melalui Odoo setelah modul KNR terpasang:
+
+1. Login sebagai `admin`, lalu buka **Pengelolaan Pesanan KNR → Master Data & Administrasi → Pengguna dan Hak Akses**.
+2. Buat pengguna, isi nama dan login/email, lalu pilih tipe **Internal User**.
+3. Pada tab **Access Rights**, pilih grup di kategori **Kedai Nyonya Rumah** sesuai matriks role di bawah. Controller dan Petugas Pengganti memakai grup yang sama.
+4. Simpan, lalu gunakan **Action → Change Password** untuk menetapkan password. Ulangi untuk akun berikutnya.
+
+Jika akun Kepala Administrasi juga bertugas mengelola pengguna, berikan hak **Administration → Access Rights** bawaan Odoo melalui akun `admin`.
+
+`.env` hanya mengatur koneksi PostgreSQL, nama database, dan port. Akun, password, dan data operasional diisi manual melalui Odoo.
+
 ## Matriks role
 
 - Kepala Controller / Petugas Pengganti: membuat/mengubah/membatalkan pesanan, melihat klien dan riwayat, meminta konfirmasi kapasitas ulang.

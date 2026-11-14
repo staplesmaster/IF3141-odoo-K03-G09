@@ -17,6 +17,8 @@ docker compose up -d
 
 Buka http://localhost:8069. Pada start pertama Odoo membuat database `odoo_app` (nama dari `ODOO_DB_NAME`); tunggu beberapa saat sampai halaman login muncul. Login awal: `admin` / `admin`. **Ganti password admin** setelah login.
 
+Untuk aplikasi pesanan KNR dan pembuatan akun pengguna, ikuti [panduan KNR](custom_addons/knr_order/README.md#pembuatan-akun).
+
 ## Commands
 
 | Keperluan | Perintah |

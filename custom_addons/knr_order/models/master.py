@@ -27,7 +27,7 @@ class KnrClient(models.Model):
     def _onchange_possible_duplicate(self):
         for rec in self:
             if rec.name or rec.phone:
-                domain = [("id", "!=", rec.id), ("active", "=", True)]
+                domain = [("id", "!=", rec._origin.id or 0), ("active", "=", True)]
                 conditions = []
                 if rec.name:
                     conditions.append(("name", "ilike", rec.name))

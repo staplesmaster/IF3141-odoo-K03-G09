@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<<<<<<< HEAD
- <record id="view_knr_order_tree" model="ir.ui.view"><field name="name">knr.order.tree</field><field name="model">knr.order</field><field name="arch" type="xml"><tree decoration-muted="state == 'cancel'" decoration-success="state == 'done'"><field name="name"/><field name="client_id"/><field name="service_datetime"/><field name="total"/><field name="state" widget="badge"/><field name="recorder_id"/></tree></field></record>
- <record id="view_knr_order_form" model="ir.ui.view"><field name="name">knr.order.form</field><field name="model">knr.order</field><field name="arch" type="xml"><form><header>
-  <button name="action_reset_capacity" type="object" string="Minta Konfirmasi Ulang" groups="knr_order.group_knr_controller" invisible="state != 'received'"/>
-  <button name="action_start_production" type="object" string="Mulai Produksi" class="btn-primary" groups="knr_order.group_knr_bakery,knr_order.group_knr_kitchen" invisible="state != 'capacity'"/>
-  <button name="action_mark_sent" type="object" string="Tandai Dikirim" class="btn-primary" groups="knr_order.group_knr_delivery" invisible="state != 'produced'"/>
-  <button name="action_mark_done" type="object" string="Tandai Selesai" class="btn-primary" groups="knr_order.group_knr_delivery" invisible="state != 'sent'"/>
-  <button name="action_cancel_order" type="object" string="Batalkan Pesanan" groups="knr_order.group_knr_controller" invisible="state in ('done','cancel')" confirm="Batalkan pesanan ini?"/>
-  <button name="action_copy_order" type="object" string="Salin Pesanan" groups="knr_order.group_knr_controller" invisible="state == 'cancel'"/>
-  <field name="state" widget="statusbar" statusbar_visible="received,capacity,produced,sent,done"/>
- </header><sheet><div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
-  <group><group string="Informasi Klien"><field name="client_id" readonly="state in ('done','cancel')"/><field name="recorder_id"/><field name="received_at"/></group><group string="Jadwal dan Tujuan"><field name="service_datetime" readonly="state in ('done','cancel')"/><field name="delivery_address" readonly="state in ('done','cancel')"/><field name="distance_km" readonly="state in ('done','cancel')"/><field name="temporary_form_no"/></group></group>
-  <notebook><page string="Rincian Produk"><field name="line_ids" readonly="state in ('done','cancel')"><tree editable="bottom"><field name="product_id"/><field name="department"/><field name="quantity"/><field name="unit_price"/><field name="subtotal" readonly="1"/></tree></field><group class="oe_subtotal_footer"><field name="subtotal"/><field name="shipping_fee"/><field name="shipping_basis"/><field name="total"/></group></page>
-  <page string="Ongkos Kirim"><group><field name="manual_shipping" groups="knr_order.group_knr_admin,knr_order.group_knr_authorized"/><field name="manual_shipping_amount" groups="knr_order.group_knr_admin,knr_order.group_knr_authorized"/><field name="manual_shipping_reason" groups="knr_order.group_knr_admin,knr_order.group_knr_authorized"/><field name="shipping_fee" readonly="1"/><field name="shipping_basis" readonly="1"/></group><button name="action_set_manual_shipping" type="object" string="Catat Penyesuaian Manual" groups="knr_order.group_knr_admin,knr_order.group_knr_authorized"/></page>
-  <page string="Catatan"><field name="special_notes"/><field name="change_reason" placeholder="Alasan perubahan rincian"/><field name="cancellation_reason" groups="knr_order.group_knr_controller"/></page>
-  <page string="Konfirmasi Kapasitas"><field name="capacity_ids" readonly="1"><tree><field name="department"/><field name="decision" widget="badge"/><field name="reason"/><field name="confirmed_by"/><field name="confirmed_at"/></tree></field></page>
-  <page string="Riwayat Perubahan"><field name="history_ids" readonly="1"><tree><field name="changed_at"/><field name="description"/><field name="changed_by"/><field name="old_summary"/><field name="new_summary"/></tree></field></page>
-  <page string="Pengiriman dan Rekap"><group><button name="action_create_reconciliation" type="object" string="Buat Rekap Pencocokan" groups="knr_order.group_knr_admin"/><field name="delivery_datetime"/><field name="completion_datetime"/><field name="reconciliation_state"/></group></page>
-  </notebook></sheet><div class="oe_chatter"><field name="message_follower_ids"/><field name="activity_ids"/><field name="message_ids"/></div></form></field></record>
- <record id="view_knr_order_search" model="ir.ui.view"><field name="name">knr.order.search</field><field name="model">knr.order</field><field name="arch" type="xml"><search><field name="name"/><field name="client_id"/><field name="service_datetime"/><filter name="received" string="Diterima" domain="[('state','=','received')]"/><filter name="production" string="Produksi" domain="[('state','in',['capacity','produced'])]"/><filter name="delivery" string="Pengiriman" domain="[('state','=','sent')]"/><filter name="done" string="Selesai" domain="[('state','=','done')]"/><filter name="cancel" string="Dibatalkan" domain="[('state','=','cancel')]"/><group expand="0" string="Kelompokkan"><filter name="group_state" string="Status" context="{'group_by':'state'}"/><filter name="group_client" string="Klien" context="{'group_by':'client_id'}"/></group></search></field></record>
- <record id="action_knr_order" model="ir.actions.act_window"><field name="name">Daftar Pesanan</field><field name="res_model">knr.order</field><field name="view_mode">tree,form</field><field name="search_view_id" ref="view_knr_order_search"/></record>
- <record id="action_knr_order_new" model="ir.actions.act_window"><field name="name">Buat Pesanan</field><field name="res_model">knr.order</field><field name="view_mode">form</field><field name="target">current</field></record>
-=======
 
     <!-- ===================================================== -->
     <!-- TREE VIEW: DAFTAR PESANAN                             -->
@@ -372,5 +349,4 @@
         <field name="target">current</field>
     </record>
 
->>>>>>> c25bdca7cc8828909d931810909d811674ec6782
 </odoo>
