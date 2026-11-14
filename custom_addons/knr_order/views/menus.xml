@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <menuitem id="menu_knr_root" name="Pengelolaan Pesanan KNR" sequence="25" groups="knr_order.group_knr_controller,knr_order.group_knr_admin,knr_order.group_knr_cake,knr_order.group_knr_bakery,knr_order.group_knr_kitchen,knr_order.group_knr_delivery,knr_order.group_knr_marketing,knr_order.group_knr_authorized"/>
+ <menuitem id="menu_knr_orders" name="Pesanan" parent="menu_knr_root" sequence="10" groups="knr_order.group_knr_controller,knr_order.group_knr_admin,knr_order.group_knr_cake,knr_order.group_knr_bakery,knr_order.group_knr_kitchen,knr_order.group_knr_delivery,knr_order.group_knr_marketing,knr_order.group_knr_authorized"/>
+ <menuitem id="menu_knr_order_list" name="Daftar Pesanan" parent="menu_knr_orders" action="action_knr_order" sequence="10" groups="knr_order.group_knr_controller,knr_order.group_knr_admin,knr_order.group_knr_cake,knr_order.group_knr_bakery,knr_order.group_knr_kitchen,knr_order.group_knr_delivery,knr_order.group_knr_marketing,knr_order.group_knr_authorized"/>
+ <menuitem id="menu_knr_new_order" name="Buat Pesanan" parent="menu_knr_orders" action="action_knr_order_new" sequence="20" groups="knr_order.group_knr_controller"/>
+ <menuitem id="menu_knr_capacity" name="Konfirmasi Kapasitas" parent="menu_knr_orders" action="action_knr_capacity" sequence="30" groups="knr_order.group_knr_bakery,knr_order.group_knr_kitchen"/>
+ <menuitem id="menu_knr_production" name="Kebutuhan Produksi" parent="menu_knr_orders" action="action_knr_production_report" sequence="40" groups="knr_order.group_knr_bakery,knr_order.group_knr_kitchen"/>
+ <menuitem id="menu_knr_delivery_schedule" name="Jadwal Pengiriman" parent="menu_knr_orders" action="action_knr_delivery_report" sequence="50" groups="knr_order.group_knr_delivery"/>
+ <menuitem id="menu_knr_clients" name="Klien Institusi" parent="menu_knr_root" action="action_knr_client" sequence="60" groups="knr_order.group_knr_controller,knr_order.group_knr_admin,knr_order.group_knr_marketing"/>
+ <menuitem id="menu_knr_crm" name="CRM &amp; Peluang" parent="menu_knr_root" action="action_knr_opportunity" sequence="70" groups="knr_order.group_knr_marketing"/>
+ <menuitem id="menu_knr_admin" name="Master Data &amp; Administrasi" parent="menu_knr_root" sequence="80" groups="knr_order.group_knr_admin"/>
+ <menuitem id="menu_knr_products" name="Produk dan Paket" parent="menu_knr_admin" action="action_knr_product" sequence="10"/>
+ <menuitem id="menu_knr_shipping" name="Ketentuan Ongkos Kirim" parent="menu_knr_admin" action="action_knr_shipping" sequence="20"/>
+ <menuitem id="menu_knr_users" name="Pengguna dan Hak Akses" parent="menu_knr_admin" action="base.action_res_users" sequence="40"/>
+ <menuitem id="menu_knr_reconciliation" name="Rekap Pencocokan POS CSA" parent="menu_knr_admin" action="action_knr_reconciliation" sequence="30"/>
+</odoo>

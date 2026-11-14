@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="module_category_knr" model="ir.module.category"><field name="name">Kedai Nyonya Rumah</field><field name="sequence">35</field></record>
+  <record id="group_knr_controller" model="res.groups"><field name="name">Kepala Controller / Petugas Pengganti</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_admin" model="res.groups"><field name="name">Kepala Administrasi</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/><field name="users" eval="[(4, ref('base.user_admin'))]"/></record>
+  <record id="group_knr_cake" model="res.groups"><field name="name">Kepala Cake Shop</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_bakery" model="res.groups"><field name="name">Kepala Bakery</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_kitchen" model="res.groups"><field name="name">Kepala Dapur Saji</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_delivery" model="res.groups"><field name="name">Petugas Pengiriman</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_marketing" model="res.groups"><field name="name">Kepala Marketing</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+  <record id="group_knr_authorized" model="res.groups"><field name="name">Pengguna Berwenang (Penyesuaian Ongkir)</field><field name="category_id" ref="module_category_knr"/><field name="implied_ids" eval="[(4, ref('base.group_user'))]"/></record>
+</odoo>
